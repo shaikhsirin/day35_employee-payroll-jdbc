@@ -18,6 +18,9 @@ public class EmployeePayrollService {
     public void addEmployeeToPayRoll(String ashwini, double v, LocalDate now, String f) {
     }
 
+    public List<EmployeePayrollData> readPayrollDataForActiveEmployees(IOService dbIo) {
+    }
+
     /**
      * creating a enum class.
      * Enums can be thought of as classes which have a fixed set of constants (a variable that does not change).
