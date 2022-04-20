@@ -22,7 +22,7 @@ public class EmployeePayrollException extends Exception {
      * create a parameterized constructor name as EmployeePayrollException
      * @param message
      */
-    public EmployeePayrollException(String message) {
+    public EmployeePayrollException( Exception type,String message) {
         super(message);
         this.type = type;
     }
