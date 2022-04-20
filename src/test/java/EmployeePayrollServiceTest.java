@@ -152,6 +152,16 @@ public class EmployeePayrollServiceTest {
         boolean result = employeePayrollService.checkEmployeePayrollInSyncWithDB("Revanth");
         Assertions.assertTrue(result);
     }
+    //UC12
+    @Test
+    public void givenEmployeePayrollData_ShouldReturn_ActiveEmployees() {
+        EmployeePayrollService employeePayrollService = new EmployeePayrollService();
+        employeePayrollService.readEmployeepayrollData(EmployeePayrollService.IOService.DB_IO);
+        List<EmployeePayrollData> employeePayrollData = employeePayrollService
+                .readPayrollDataForActiveEmployees(EmployeePayrollService.IOService.DB_IO);
+        System.out.println(employeePayrollData);
+        Assertions.assertEquals(5, employeePayrollData.size());
+    }
 
 }
 
