@@ -132,6 +132,17 @@ public class EmployeePayrollServiceTest {
         Assertions.assertTrue(result);
         System.out.println(employeePayrollData);
     }
+    //uc10
+    @Test
+    public void givenNewSalaryForEmployeeWhenupdatedShouldSyncWith_RefactorNewNormalisedDB() throws EmployeePayrollException {
+        EmployeePayrollService employeePayrollService = new EmployeePayrollService();
+        List<EmployeePayrollData> employeePayrollData = employeePayrollService
+                .readEmployeepayrollData(EmployeePayrollService.IOService.DB_IO);
+        employeePayrollService.updateEmployeeSalary("Hima", 200000.0);
+        System.out.println(employeePayrollData);
+        boolean result = employeePayrollService.checkEmployeePayrollInSyncWithDB("Hima");
+        Assertions.assertTrue(result);
+    }
 
 }
 
